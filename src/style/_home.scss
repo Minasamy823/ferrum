@@ -153,7 +153,6 @@
      display: flex;
      flex-direction: column;
      &-first{
-
        position: relative;
        left: 20%;
        top: 20px;
@@ -163,15 +162,21 @@
        width: 40%;
        border-style: none;
        visibility: visible;
-       padding-top: 1.2vw;
-       height: 7vw;
+       padding-top: 0vw;
+       // height: 7vw;
        background-color:  #ffd200;
        animation: 2s first;
+       // font-size:2vw;
+       p{
+         font-size: 1.7vw;
+         line-height: 2vw;
+         font-weight: bold;
+       }
      }
-     @keyframes first{
-       from{left: -50%}
-       to{left : 20%}
-     }
+     // @keyframes first{
+     //   from{left: -50%}
+     //   to{left : 20%}
+     // }
 
 
 
@@ -223,7 +228,7 @@
        }
        &-third_line{
          margin-top: 20px;
-         padding-bottom: 1.5vw;
+         // padding-bottom: 1.5vw;
          & input{
            font-size: 0.9vw;
            margin-right: 10px;
@@ -233,7 +238,9 @@
          & button{
            margin-top: 20px;
            width: 13vw;
-           height: 3vw;
+           // height: 3vw;
+           padding: 18px;
+           margin-bottom: 15px;
            background-color: #dc3545;
            color: white;
            font-size: 1.4vw;
@@ -299,7 +306,7 @@
    // height: 1vw;
    margin-right: 5vw;
    margin-left: auto;
-   margin-top: 330px;
+   margin-top: 12vw;
    // border-style: solid;
    // border-color: yellow;
    ul{
@@ -338,11 +345,13 @@
      &-wrinting{
        width: 50%;
        padding-top: 1.3vw;
+       font-size: 2.5vw;
+
        // border-style: solid;
        // border-color: yellow;
        text-align: center;
 
-       & h{
+       h {
          text-align: center;
          font-size: 1vw;
          font-weight: bold;
@@ -387,11 +396,9 @@
 
 
       & h{
-
         text-align: center;
         font-size: 1vw;
         font-weight: bold;
-
       }
       p{
         font-size: 1vw;
@@ -468,6 +475,7 @@
           border-left: 0.3vw solid #ffd200;
           & p{
             color: white;
+
             font-size: 1vw;
           }
         }
@@ -516,6 +524,13 @@
           // border-style: solid;
           // border-color: red;
           margin-bottom: 2vw;
+          .numbers{
+             font-size: 2vw;
+             font-weight :bold;
+             color: #ffd200;
+             margin-right:0.6vw;
+             padding-top: 0.8vw;
+          }
           & div{
             font-size: 0.9vw;
             line-height: 1.1vw;
@@ -545,7 +560,7 @@
   background-color: #d9d9d5;
 
   &-title{
-    animation: pulse 2s  ;
+    // animation: pulse 2s  ;
     // border-style: solid;
     // border-color: red;
     width: 38%;
@@ -560,14 +575,14 @@
       font-weight: 600;
     }
   }
-  @keyframes pulse {
-      from {
-        left: -50%;
-      }
-      to {
-        left: 20%;
-      }
-    }
+  // @keyframes pulse {
+  //     from {
+  //       left: -50%;
+  //     }
+  //     to {
+  //       left: 20%;
+  //     }
+  //   }
     &-description{
       // border-style: solid;
       // border-color: red;
@@ -581,10 +596,10 @@
         font-size: 0.9vw;
         animation: p 2s;
 
-        @keyframes p {
-          from{right: -100%}
-          to{right : 0%}
-        }
+        // @keyframes p {
+        //   from{right: -100%}
+        //   to{right : 0%}
+        // }
       }
       &-flex{
         display: flex;
@@ -598,16 +613,16 @@
 
         img{
           width: 100%;
-        }
+           }
       }
-      @keyframes photos {
-          from {
-            left: -50%;
-          }
-          to {
-            left: 0%;
-          }
-        }
+      // @keyframes photos {
+      //     from {
+      //       left: -50%;
+      //     }
+      //     to {
+      //       left: 0%;
+      //     }
+      //   }
 
 
 
@@ -623,10 +638,10 @@
       margin-left: 10%;
       margin-top: 7%;
       animation: box 2s;
-      @keyframes box{
-        from{right:-100%}
-        to{right: 0%}
-      }
+      // @keyframes box{
+      //   from{right:-100%}
+      //   to{right: 0%}
+      // }
       &-title{
         padding: 3%;
         font-weight: bold;
@@ -811,7 +826,7 @@
         text-decoration: none;
         color: inherit;
       }
-      &:hover, &:active{
+       &:hover {
         box-shadow: inset 99vw 0 0 0 #473C0C;
         color: white;
         // this line is for the color that appears after hover
@@ -844,7 +859,7 @@
     font-weight: bold;
     font-size: 3vw;
     padding-top: 18px;
-    &:hover, &:active{
+    &:hover{
       cursor: pointer;
     }
     }
@@ -960,26 +975,311 @@
 // phones and small screen devices
 @media (min-width: 320px) and (max-width: 480px) {
   .second_ground{
-    height: 700px;
+    height: 870px;
   }
-  .history-photos {
-    margin-top: 119px;
+  .second_ground-container{
+    margin-left: 1px;
+    top: 22%;
+    margin-right: 1px;
+  }
+  .second_ground-container-first{
+    position: relative;
+    width: 95%;
+    left: 0%;
+    // margin-left: 5px;
+    animation: 2s first;
+    p {
+      font-size: 5vw;
+      line-height: 4vw;
+      font-weight: bold;
+    }
+  }
+  @keyframes first{
+    from{left: -50%}
+    to{left : 3%}
+  }
+
+  .second_ground-container-second{
+    width: 100%;
+    left : 0%;
+    font-size: 4vw;
+    line-height: 5vw;
+  }
+  .second_ground-container-third{
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+  .second_ground-container-third-first_line{
+    font-size: 4vw;
+    line-height: 4.5vw;
+    margin-top: 7%;
+  }
+  .second_ground-container-third-second_line{
+    font-size: 3.3vw;
+    position: relative;
+    right: 10%;
+    width: 100%;
+  }
+  .second_ground-container-third-third_line input{
+    width:25vw;
+    // font-size: 3.3vw;
+    font-size: 2.8vw;
+    padding: 4vw;
+    // padding: 10px;
+    // height: 10px;
+  }
+  .second_ground-container-third-third_line button{
+    width: 30%;
+    font-size: 3.5vw;
+    padding: 3.5vw;
+    margin-bottom: 2vw;
+  }
+  .history{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    &-writings{
+      width: 95%;
+      left: 0%;
+      margin-left:auto;
+      margin-right: auto;
+      text-align: center;
+      &-company{
+        font-size: 4vw;
+        font-weight: bold;
+      }
+      &-paragraphs{
+        line-height: 3vw;
+        font-size: 3vw;
+      }
+    }
+    &-photos{
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+      ul{
+        display: block;
+        position: relative;
+        right: 5%;
+        li{
+          padding:12px;
+        }
+      }
+    }
+
+  }
+  .counters_cont-title{
+    margin-left: 10%;
+    width: 80%;
+    font-size: 3.5vw;
+    line-height: 4vw;
+  }
+  .counters_cont-container-boxes {
+    width: 100%;
+    // font-size: 4vw;
+    ul{
+      li{
+        font-size: 4.3vw;
+        p{
+          // border-style: solid;
+          // border-color: red;
+          width: 100%;
+          font-size: 2.5vw;
+        }
+
+      }
+    }
+  }
+      .garantee{
+        width: 95%;
+        position: relative;
+        right: 16%;
+      }
+      .garantee-title {
+          width: 95%;
+        }
+      .garantee-title h{
+        font-size: 4.2vw;
+        font-weight: bold;
+        line-height: 1vw;
+      }
+      .garantee-blocks{
+        width: 100%;
+        left: 10%;
+        ul{
+          display: flex;
+          flex-direction: column;
+          li{
+            width: 100%;
+            padding: 0px;
+            p{
+              margin-bottom: 2vw;
+              .numbers{
+                font-size: 5vw;
+                color: #ffd200;
+              }
+              h {
+                // border-style: solid;
+                // border-color: red;
+                margin-bottom: 1vw;
+                line-height: 4vw;
+                font-size: 4vw;
+                font-weight: bold;
+              }
+              div{
+                font-size: 3vw;
+                line-height: 3vw;
+              }
+            }
+          }
+        }
+      }
+      .buildings{
+        &-title{
+            width: 100%;
+            left: 0%;
+            h{
+              line-height: 1.8vw;
+              font-size: 3.5vw;
+              font-weight: 600;
+            }
+        }
+        &-description{
+          margin-left: 0%;
+          margin-top: 2%;
+          width: 100%;
+          &-flex{
+            display: block;
+
+
+
+
+          p {
+            position: relative;
+            margin-left: 0px;
+            font-size: 3.5vw;
+          }
+
+      }
+  }
+
+}
+.buildings-description-flex-photos{
+  margin-left: auto;
+  margin-right: auto;
+  height: 30vw;
+}
+.buildings-description-box-title h{
+  font-size: 4.2vw;
+}
+.buildings-description p{
+  font-size: 3.5vw;
+}
+.instructure{
+  height: 332px
+}
+.instructure-cont{
+  height: 370px;
+}
+.instructure-cont-photo{
+  height: 170px;
+  position: relative;
+  top: 20%;
+}
+.instructure-cont h{
+  width: 90%;
+  left: 3%;
+  font-size: 4.5vw;
+  line-height: 4.5vw;
+}
+.instructure-cont-paragraphs {
+    position: absolute;
+    font-size: 3.7vw;
+    font-weight: bold;
+    left: 5%;
+    transform: translateY(23%);
+    width: 35%;
+  }
+  .instructure-cont-photo img:nth-child(1) {
+    width: 99%;
+    margin-top: 50px;
+}
+.instructure-cont-photo img:nth-child(2) {
+  width: 13vw;
+  right: 1%;
+  transform: translateY(11vw);
+}
+.instructure-cont-photo img:nth-child(3) {
+    width: 12vw;
+    right: 26%;
+}
+.instructure-cont-photo img:nth-child(4) {
+    width: 12vw;
+    right: 59%;
+}
+.instructure-cont-photo img:nth-child(5) {
+    width: 12vw;
+    right: 74%;
+    transform: translateY(15vw);
+}
+  .ads{
+     display: flex;
+     flex-direction: column;
+     &-left{
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+     }
+  }
+  .ads-left-wrinting{
+    width: 100%;
+    margin-right: 2px;
+   h{
+      font-size:4vw;
+    }
+    p{
+      font-size: 3.4vw;
+    }
   }
   .ads-left-slider {
-    top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
-   .ads-right-secslider{
-     top: 20px;
-   }
-   .instructure{
-     height: 270px;
-   }
-   .instructure-cont{
-     height: 270px;
-   }
-   .instructure-cont-photo{
-     height: 170px;
-   }
+  .ads-right{
+    width: 100%;
+    display : flex;
+    flex-direction: column;
+  }
+  .ads-right-wrinting{
+    width: 100%;
+    // margin-right: 2px;
+    h{
+       font-size:4vw;
+     }
+     p{
+       font-size: 3.4vw;
+     }
+  }
+  .ads-right-secslider{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .gallery{
+    width: 90%;
+    position: relative;
+    margin-left: 0px;
+    margin-right: 0px;
+    left: 4%;
+  }
+
+
+
+
+   // .instructure{
+   //   height: 270px;
+   // }
+
 
 
 }

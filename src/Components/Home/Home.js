@@ -31,7 +31,7 @@ import s1 from '../logo/sliders/s1.jpeg'
 import s2 from '../logo/sliders/s2.jpeg'
 import s3 from '../logo/sliders/s3.jpeg'
 import s4 from '../logo/sliders/s4.jpeg'
-
+import {Animated} from "react-animated-css";
 
 
 
@@ -41,17 +41,55 @@ import s4 from '../logo/sliders/s4.jpeg'
 export default class Home extends Component {
   state={
     start : false,
+    buildingvisible: false,
+    history: false,
+    ads : false,
+    title :false,
+    title2 : false,
+    instructure: false,
     width: '',
     heigth:''
   }
+  onVisibilitytitle2 =(isVisible)=> {
+      if (isVisible) {
+          this.setState({title2: true})
 
+    }
+  }
+  onVisibilityinstructure =(isVisible)=> {
+      if (isVisible) {
+          this.setState({instructure: true})
 
+    }
+  }
+  onVisibilityhistory =(isVisible)=> {
+      if (isVisible) {
+          this.setState({history: true})
+    }
+  }
+  onVisibilitytitle =(isVisible)=> {
+      if (isVisible) {
+          this.setState({title: true})
+    }
+  }
+
+  onVisibilitybuilding =(isVisible)=> {
+      if (isVisible) {
+          this.setState({buildingvisible: true})
+    }
+  }
 
   onVisibilityChange =(isVisible)=> {
       if (isVisible) {
           this.setState({start: true})
     }
   }
+  onVisibilityads =(isVisible)=> {
+      if (isVisible) {
+          this.setState({ads: true})
+    }
+  }
+
   updatewindowsdimensions=()=>{
     this.setState({width: window.innerWidth, height: window.innerHeight})
 
@@ -225,47 +263,69 @@ componentDidMount(){
           </div>
 
         </div>
-//where the js
     return(
       <div>
+      <div>
       {this.state.width > 700 ? bar : mobile_bar}
+      </div>
 
 
     <div>
       <div className='second_ground'>
           <div className='second_ground-container'>
-          <div
-               className='second_ground-container-first'>
-              <p style=
-                      {{fontSize: '1.7vw',
-                      lineHeight: "2vw",
-                      fontWeight: 'bold',}}>
+          <Animated animationIn="bounceInRight" animationOut='' isVisible={true}>
+
+          <div className='second_ground-container-first'>
+              <p>
                    Стеновые и кровельные сэндвич-панели получайте скидку, уже со 2-го заказа:
               </p>
+
           </div>
+          </Animated>
           <div className='second_ground-container-second'>
-              <div data-aos="fade-left" style={{display: "flex", marginBottom: "40px"}}>
+
+
+              <div  style={{display: "flex", marginBottom: "40px"}}>
+                <Animated animationIn="zoomInRight" animationOut='' isVisible={true}>
                   <h style={{marginRight:"auto"}}>
                       Реализуем также небольшие партии от 100 м2
                   </h>
-                  <h> Гарантируем соблюдение обязательств по договору </h>
+                  </Animated>
+                  <Animated animationIn="zoomInRight" animationOut='' isVisible={true}>
+                      <h> Гарантируем соблюдение обязательств по договору </h>
+                  </Animated>
               </div>
-              <div data-aos="fade-left" style={{display: "flex"}}>
-                  <h style={{marginRight:"auto"}}>Характеристики панелей четко соответствуют запросу клиента </h>
-                  <h> Предоставляем специальные условия для постоянных партнеров</h>
+
+
+              <div  style={{display: "flex"}}>
+                <Animated animationIn="zoomInLeft" animationOut='' isVisible={true}>
+                    <h style={{marginRight:"auto"}}>
+                        Характеристики панелей четко соответствуют запросу клиента
+                    </h>
+                </Animated>
+                <Animated animationIn="zoomInLeft" animationOut='' isVisible={true}>
+                    <h>
+                        Предоставляем специальные условия для постоянных партнеров
+                    </h>
+                </Animated>
+
               </div>
          </div>
+         <Animated animationIn="zoomInLeft" animationOut='' isVisible={true}>
           <div className='second_ground-container-third'>
             <div>
-               <p className='second_ground-container-third-first_line'> Мы пришлем Вам на почту информацию о том,
-                что такое сэндвич-панели </p>
-                <div className='second_ground-container-third-second_line'>
+                   <p className='second_ground-container-third-first_line'>
+                      Мы пришлем Вам на почту информацию о том,то такое сэндвич-панели
+                   </p>
+                  <div className='second_ground-container-third-second_line'>
                   <ul >
-                  <li style={{marginRight: "auto"}}>
+                      <li style={{marginRight: "auto"}}>
+                      Каталог: цветные фото, характеристики, оптовые цены
+                      </li>
 
-                  Каталог: цветные фото, характеристики, оптовые цены</li>
-                  <li >
-                  Технические условия ТУ 5284-001-76808259-2013</li>
+                      <li>
+                          Технические условия ТУ 5284-001-76808259-2013
+                      </li>
                   </ul>
                 </div>
                 <div className='second_ground-container-third-third_line'>
@@ -278,35 +338,33 @@ componentDidMount(){
               </div>
             </div>
           </div>
+          </Animated>
         </div>
       </div>
     </div>
-
+    <VisibilitySensor onChange={this.onVisibilityhistory}
+    delayedCall>
       <div className='history'>
          <div className='history-writings'>
-          <p className = 'history-writings-company'> История компании </p>
+          <p data-aos="fade-down" className = 'history-writings-company'> История компании </p>
           <div className='history-writings-paragraphs'>
-            <p data-aos="fade-up"> История компании началась в 2005 году на Дальнем Востоке.
+            <p data-aos="fade-right"> История компании началась в 2005 году на Дальнем Востоке.
             В городе Благовещегске, Амурской области была основана компания «Фасады и Кровля»
             и открыт завод по производству профнастила и металлических сэндвич-панелей. А в 2013 году году
             запущена автоматическая линия (DUEMAS, Великобритания) для производства стеновых и кровельных сэндвич-панелей. </p>
-
-            <p data-aos="fade-up"> Особой ценностью компании являются люди, которые трудятся в компании со дня основания фирмы.
+            <p data-aos="fade-right"> Особой ценностью компании являются люди, которые трудятся в компании со дня основания фирмы.
              Это высококвалифицированный инженерно-технический персонал, а также сотрудники отдела продаж,
              имеющие многолетний опыт работы в области строительной индустрии.
              Наши специалисты имеют большой опыт организации поставок сэндвич-панелей
              в рамках крупных инфраструктурных государственных и коммерческих проектов с широкой
              географией присутствия и сложной логистикой. </p>
-
-            <p data-aos="fade-up"> Поэтому решение об открытии второго завода в Липецкой области,
+            <p data-aos="fade-right"> Поэтому решение об открытии второго завода в Липецкой области,
             поселке Лев Толстой стало логичным продолжением успешной работы компании. Была закуплена и запущена еще
             одна новейшая автоматизированная линия DUEMAS. Открытие второго завода, как обособленного подразделения,
             позволило решить многие сложные задачи по обеспечению оптимальной логистики.</p>
-
-            <p data-aos="fade-up"> С открытием второго завода в Липецкой области
+            <p data-aos="fade-right">  С открытием второго завода в Липецкой области
              производительность увеличилась до 1 000 000 кв.м. сэндвич-панелей в год. </p>
-
-            <p data-aos="fade-up"> У нового завода появились постоянные Заказчики
+            <p data-aos="fade-right"> У нового завода появились постоянные Заказчики
              из Центральной России и Черноземья.
              Для удобства работы с нашими Заказчиками руководством компании было
              принято решение о выводе обособленного подразделения в отдельную компанию,
@@ -315,21 +373,24 @@ componentDidMount(){
           </div>
           <div className='history-photos'>
           <ul >
-            <div style={{display: "inline"}}>
-              <li> <img src={img01}/> </li>
-              <li> <img src={img02}/> </li>
+            <div data-aos="flip-left" style={{display: "inline"}}>
+              <li> <img data-aos="flip-up" src={img01}/> </li>
+              <li> <img data-aos="flip-left" src={img02}/> </li>
              </div>
              <div style={{display: "inline"}}>
-              <li> <img src={img03}/> </li>
-              <li style={{height:"10.5vw"}}> <iframe width="100%" height='100%' src="https://www.youtube.com/embed/ooJSgsB5fIE?modestbranding=1&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen='allowfullscreen'></iframe> </li>
+              <li> <img data-aos="flip-up" src={img03}/> </li>
+              <li data-aos="flip-left" style={{height: this.state.width < 481 ? '63.5vw' : '10.5vw'}}> <iframe width="100%" height= "100%" src="https://www.youtube.com/embed/ooJSgsB5fIE?modestbranding=1&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen='allowfullscreen'></iframe> </li>
              </div>
           </ul>
           </div>
 
       </div>
-
-     <div className='ads'>
+      </VisibilitySensor>
+      <VisibilitySensor onChange={this.onVisibilityads}
+      delayedCall>
+        <div className='ads'>
           <div className='ads-left'>
+          <Animated animationIn="bounceInLeft" animationOut='' isVisible={this.state.ads}>
               <div className='ads-left-wrinting'>
                   <h> News </h>
                   <p> У нового завода появились постоянные Заказчики
@@ -337,6 +398,7 @@ componentDidMount(){
                     с нашими Заказчиками руководством компании
                    было принято решение о выводе обособленного  </p>
               </div>
+          </Animated>
               <div className='ads-left-slider'>
                 <Slider {...settings}>
                     <div>
@@ -355,6 +417,7 @@ componentDidMount(){
              </div>
          </div>
      <div className='ads-right'>
+     <Animated animationIn="bounceInLeft" animationOut='' isVisible={this.state.ads}>
           <div className='ads-right-wrinting'>
             <h> News </h>
             <p> Поэтому решение об открытии второго завода в
@@ -362,8 +425,9 @@ componentDidMount(){
               продолжением успешной работы компании.
             Была закуплена и запущена еще одна новейшая  </p>
           </div>
+    </Animated>
           <div className='ads-right-secslider'>
-            <Slider {...second_setting}>
+            <Slider {...settings}>
                 <div>
                   <img src={slider5}/>
                 </div>
@@ -380,11 +444,17 @@ componentDidMount(){
           </div>
      </div>
   </div>
+</VisibilitySensor>
+
   <div className='counters_cont'>
+  <VisibilitySensor onChange={this.onVisibilitytitle} delayedCall>
+  <Animated animationIn="bounceInLeft" animationOut='' isVisible={this.state.title}>
     <div className="counters_cont-title" >
       <h> Наши достижения как гарантии
        надежных партнерских отношений </h>
     </div>
+    </Animated>
+  </VisibilitySensor>
     <div className='counters_cont-container'>
       <div className='counters_cont-container-boxes'>
         <ul>
@@ -486,25 +556,25 @@ componentDidMount(){
     </div>
   </div>
 
-  <div   className='garantee '>
-     <div  className='garantee-title '>
-        <div className='headShake'>
-
-
-        <h className='headShake'> Холдинг «Фасады и Кровля» гарантирует высокое качество продукции и услуг </h>
+  <div className='garantee'>
+     <div className='garantee-title'>
+       <div >
+       <VisibilitySensor delayedCall onChange={this.onVisibilitytitle2}>
+         <h data-aos="fade-up">
+           Холдинг «Фасады и Кровля» гарантирует высокое качество продукции и услуг
+         </h>
+        </VisibilitySensor>
+       </div>
     </div>
-    </div>
-
-
 
 
       <div className='garantee-blocks'>
           <ul>
             <li>
-                <p data-aos="fade-up"
+                <p data-aos="fade-right"
                    data-aos-duration="500"
                    style={{display: 'flex'}}>
-                      <div style={{fontSize:"2vw", fontWeight:"bold", color:"#ffd200", marginRight:"0.6vw", paddingTop: "0.8vw"}}>
+                      <div className='numbers'>
                         01
                       </div>
                       <div>
@@ -513,10 +583,10 @@ componentDidMount(){
                           </div>
                       </div>
                   </p>
-                  <p data-aos="fade-up"
+                  <p data-aos="fade-right"
                      data-aos-duration="1500"
                      style={{display: 'flex'}}>
-                      <div style={{fontSize:"2vw", fontWeight:"bold", color:"#ffd200", marginRight:"0.6vw", paddingTop: "0.8vw"}}>
+                      <div className='numbers'>
                         02
                       </div>
                       <div>
@@ -525,11 +595,11 @@ componentDidMount(){
                           </div>
                       </div>
                   </p>
-                  <p data-aos="fade-up"
+                  <p data-aos="fade-right"
                      data-aos-duration="2500"
                      style={{display: 'flex'}}>
-                    <div style={{fontSize:"2vw", fontWeight:"bold", color:"#ffd200", marginRight:"0.6vw", paddingTop: "0.8vw"}}>
-                      03
+                     <div className='numbers'>
+                        03
                     </div>
                     <div>
                         <h> Соответствие требованиям заказчиков </h>
@@ -539,10 +609,10 @@ componentDidMount(){
                   </p>
             </li>
             <li>
-                <p data-aos="fade-up"
-                data-aos-duration="1000"
+                <p data-aos="fade-right"
+                data-aos-duration="2500"
                  style={{display: 'flex'}}>
-                    <div style={{fontSize:"2vw", fontWeight:"bold", color:"#ffd200", marginRight:"0.6vw", paddingTop: "0.8vw"}}>
+                 <div className='numbers'>
                       04
                     </div>
                     <div>
@@ -551,10 +621,10 @@ componentDidMount(){
                         </div>
                     </div>
                   </p>
-                  <p data-aos="fade-up"
+                  <p data-aos="fade-right"
                   data-aos-duration="2000"
                    style={{display: 'flex'}}>
-                    <div style={{fontSize:"2vw", fontWeight:"bold", color:"#ffd200", marginRight:"0.6vw", paddingTop: "0.8vw"}}>
+                   <div className='numbers'>
                       05
                     </div>
                     <div>
@@ -563,10 +633,10 @@ componentDidMount(){
                         </div>
                     </div>
                   </p>
-                  <p data-aos="fade-up"
+                  <p data-aos="fade-right"
                   data-aos-duration="3000"
                    style={{display: 'flex'}}>
-                    <div style={{fontSize:"2vw", fontWeight:"bold", color:"#ffd200", marginRight:"0.6vw", paddingTop: "0.8vw"}}>
+                   <div className='numbers'>
                       06
                     </div>
                     <div>
@@ -583,63 +653,75 @@ componentDidMount(){
 
 
     <div className='buildings'>
-      <div className='buildings-title'>
-          <h> Кровельные и стеновые сэндвич-панели крайне востребованный на рынке продукт </h>
-      </div>
+          <div className='buildings-title'>
+              <h data-aos="fade-right"> Кровельные и стеновые сэндвич-панели крайне востребованный на рынке продукт </h>
+          </div>
       <div className='buildings-description'>
-        <div className='buildings-description-flex'>
+        <div data-aos="fade-right" className='buildings-description-flex'>
           <div className='buildings-description-flex-photos'>
             <Slider {...settings}>
                 <img src='/static/media/upakovka.440f3151.png'/>
                 <img src='/static/media/slider9.05900033.jpg'/>
                 <img src='/static/media/stanok.127be9a7.png'/>
             </Slider>
+         </div>
+        <p >
+          Предлагаемые компанией сэндвич-панели для крыш и стен представляют собой готовый для монтажа стройматериал, не требующий дополнительной подготовки и обслуживания.
+          <br/>
+          <br/>
+          Конструкции востребованы на строительстве складских помещений, торговых центров, общественных зданий и производственных объектов.
+          <div  className='buildings-description-box'>
+            <div data-aos="fade-up" className='buildings-description-box-title'>
+              <h > Преимущества многослойных панелей:</h>
+              <br/>
+              <br/>
+
+              <p> Высокая антикоррозионная устойчивость</p>
+              <p> Малый вес, если сравнивать с аналогами</p>
+              <p> Возможность быстрого монтажа без специального оборудования</p>
+              <p> Повышенные теплосберегающие и звукоизоляционные свойства</p>
+            </div>
           </div>
 
-          <p>
-                Предлагаемые компанией сэндвич-панели для крыш и стен представляют собой готовый для монтажа стройматериал, не требующий дополнительной подготовки и обслуживания.
-            <br/>
-            <br/>
-                Конструкции востребованы на строительстве складских помещений, торговых центров, общественных зданий и производственных объектов.
+         </p>
 
-            <div className='buildings-description-box'>
-                <div className='buildings-description-box-title'>
-                    <h > Преимущества многослойных панелей:</h>
-                    <br/>
-                    <br/>
 
-                    <p> Высокая антикоррозионная устойчивость</p>
-                    <p> Малый вес, если сравнивать с аналогами</p>
-                    <p> Возможность быстрого монтажа без специального оборудования</p>
-                    <p> Повышенные теплосберегающие и звукоизоляционные свойства</p>
 
-              </div>
-              </div>
-
-          </p>
         </div>
-            <p> Применение многослойных изделий для сооружения крыш и стен позволяет получить теплые помещения, при этом сократить бюджет и время строительства. Преимущество панелей для строителей - легкий и удобный монтаж. Период эксплуатации материала составляет более 20 лет, а гарантия выдается на 1,5 года со дня отгрузки на производстве.</p>
 
-      </div>
+            <p> Применение многослойных изделий для сооружения крыш и стен позволяет получить теплые помещения, при этом сократить бюджет и время строительства. Преимущество панелей для строителей - легкий и удобный монтаж. Период эксплуатации материала составляет более 20 лет, а гарантия выдается на 1,5 года со дня отгрузки на производстве.</p>
+        </div>
+
    </div>
+
+
+<VisibilitySensor onChange={this.onVisibilityinstructure}
+  delayedCall // Prevents react apps triggering elements as visible before styles are loaded
+>
    <div className='instructure'>
+
       <div className='instructure-cont'>
-          <div className='instructure-cont-photo'>
-              <img src={building}/>
+          <div  className='instructure-cont-photo'>
+
+              <img  data-aos="fade-left" src={building}/>
               <img src={img0}/>
               <img src={img1}/>
               <img src={img2}/>
               <img src={img3}/>
+
           </div>
-          <h> Ознакомьтесь с нашим ассортиментом более подробно </h>
-          <div className='instructure-cont-paragraphs'>
-            <p> 1. Кровельные сэндвич-панели </p>
-            <p> 2. Стеновые сэндвич-панели </p>
-            <p> 3. Фасонные элементы </p>
-            <p> 4. Доборные элементы </p>
-          </div>
+              <h data-aos="fade-right"> Ознакомьтесь с нашим ассортиментом более подробно </h>
+            <div className='instructure-cont-paragraphs'>
+                <Animated animationIn="bounceInLeft" animationOut='' isVisible={this.state.instructure}>
+                    <p> 1. Кровельные сэндвич-панели </p>
+                    <p> 2. Стеновые сэндвич-панели </p>
+                    <p> 3. Фасонные элементы </p>
+                    <p> 4. Доборные элементы </p>
+                </Animated>
+            </div>
       </div>
    </div>
+   </VisibilitySensor>
    <div className='gallery'>
    <Slider {...third_settings}>
             <div className='container'>
@@ -661,7 +743,6 @@ componentDidMount(){
    </Slider>
 
    </div>
-   {console.log(this.state.width)}
 </div>
 
 

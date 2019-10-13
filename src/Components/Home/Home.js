@@ -3,11 +3,14 @@ import AOS from 'aos'
 import Background from "../logo/back.jpg"
 import Phone from "../logo/phone.svg"
 import Form from "../logo/form.png"
+import {Animated} from "react-animated-css";
+import Slider from "react-slick";
+import CountUp, {startAnimation} from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 import img01  from "../logo/img01.jpg"
 import img02  from "../logo/img02.jpg"
 import img03  from "../logo/img03.jpg"
 import logo  from "../logo/logo.svg"
-import Slider from "react-slick";
 import slider1 from '../logo/sliders/slider1.jpeg'
 import slider2 from '../logo/sliders/slider2.jpeg'
 import slider3 from '../logo/sliders/slider3.jpeg'
@@ -17,8 +20,6 @@ import slider6 from '../logo/sliders/slider6.jpeg'
 import slider7 from '../logo/sliders/slider7.jpeg'
 import slider8 from '../logo/sliders/slider8.jpeg'
 import sec_back from '../logo/sec_back.jpg'
-import CountUp, {startAnimation} from 'react-countup';
-import VisibilitySensor from 'react-visibility-sensor';
 import upakovka from '../logo/sliders/upakovka.png'
 import slider9 from '../logo/sliders/slider9.jpg'
 import stanok from '../logo/sliders/stanok.png'
@@ -31,10 +32,6 @@ import s1 from '../logo/sliders/s1.jpeg'
 import s2 from '../logo/sliders/s2.jpeg'
 import s3 from '../logo/sliders/s3.jpeg'
 import s4 from '../logo/sliders/s4.jpeg'
-import {Animated} from "react-animated-css";
-
-
-
 
 
 
@@ -110,25 +107,25 @@ componentDidMount(){
 
   render () {
     const settings = this.state.width > 660 ? {
-                    dots: true,
-                    fade: true,
-                    infinite: true,
-                    speed: 200,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    autoplay: true,
-                  } :
-                  {
-                    dots: false,
-                    fade: true,
-                    infinite: true,
-                    speed: 200,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    autoplay: true,
-                  }
+                              dots: true,
+                              fade: true,
+                              infinite: true,
+                              speed: 200,
+                              slidesToShow: 1,
+                              slidesToScroll: 1,
+                              arrows: false,
+                              autoplay: true,
+                            } :
+                            {
+                              dots: false,
+                              fade: true,
+                              infinite: true,
+                              speed: 200,
+                              slidesToShow: 1,
+                              slidesToScroll: 1,
+                              arrows: false,
+                              autoplay: true,
+                            }
 
     const second_setting = {
                             dots: true,
@@ -190,7 +187,7 @@ componentDidMount(){
                                     fontWeight: 'bold',
                                   }}>
                                   <li> +7 (977) 825 7626 </li>
-                                  <li>   info@ferrumpanel.ru </li>
+                                  <li> minasamy823@gmail.com </li>
                               </div>
                               <li>  <button> закать звонок </button> </li>
 
@@ -200,11 +197,11 @@ componentDidMount(){
                       </div>
                        <div   className='bar-menu_container'>
                           <ul>
-                              <li > About</li>
-                              <li > Products</li>
-                              <li > Pages</li>
+                              <li > компании</li>
+                              <li > Продукция</li>
+                              <li > Прайс</li>
                               <li  className="dropdown">
-                                  <span>Blog</span>
+                                  <span>Блог</span>
                                   <div className="down">
                                     <ul>
                                         <li>1</li>
@@ -213,9 +210,9 @@ componentDidMount(){
                                     </ul>
                                   </div>
                                </li>
-                              <li> Garante</li>
+                              <li> Гарантии</li>
                               <li className="dropdown">
-                                  <span>Documents</span>
+                                  <span>Oбъекты</span>
                                   <div className="down">
                                     <ul>
                                         <li>1</li>
@@ -228,8 +225,8 @@ componentDidMount(){
                                     </ul>
                                   </div>
                               </li>
-                              <li > Documents</li>
-                              <li > Contacts</li>
+                              <li > Документы</li>
+                              <li > Контакты</li>
                           </ul>
                           </div>
                       </div>
@@ -253,10 +250,10 @@ componentDidMount(){
                 </div>
                 <div className=' menu'>
                   <div className='links'>
-                      <p> <a href='#'> About us </a> </p>
-                      <p> <a href='#'> Documents </a> </p>
-                      <p> <a href='#'> Products </a> </p>
-                      <p> <a href='#'> Contacts </a> </p>
+                      <p> <a href='#'> компании </a> </p>
+                      <p> <a href='#'> Продукция </a> </p>
+                      <p> <a href='#'> Прайс </a> </p>
+                      <p> <a href='#'> Блог </a> </p>
                   </div>
                 </div>
             </div>
@@ -266,7 +263,7 @@ componentDidMount(){
     return(
       <div>
       <div>
-      {this.state.width > 700 ? bar : mobile_bar}
+      {this.state.width > 600 ? bar : mobile_bar}
       </div>
 
 
